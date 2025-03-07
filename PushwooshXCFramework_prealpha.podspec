@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
     ss.vendored_frameworks = 'iOS_SDK/XCFramework/PushwooshCore.xcframework'
   end
 
-  s.subspec 'PushwooshSplitter' do |ss|
+  s.subspec 'PushwooshBridge' do |ss|
     ss.dependency 'XCFramework/PushwooshBridge'
     ss.vendored_frameworks = 'iOS_SDK/XCFramework/PushwooshBridge.xcframework'
   end
