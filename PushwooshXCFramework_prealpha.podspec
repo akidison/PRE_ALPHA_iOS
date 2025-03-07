@@ -23,9 +23,9 @@ Pod::Spec.new do |s|
     core.ios.vendored_frameworks  = 'XCFramework/PushwooshFramework.xcframework'
     core.library  = 'c++', 'z'
     core.frameworks  = 'Security', 'StoreKit'
-    core.dependency 'PushwooshXCFramework/Core/PushwooshCore'
-    core.dependency 'PushwooshXCFramework/Core/PushwooshBridge'
-    core.dependency 'PushwooshXCFramework/Core/PushwooshLiveActivities'
+    core.dependency 'PushwooshXCFramework_prealpha/PushwooshCore'
+    core.dependency 'PushwooshXCFramework_prealpha/PushwooshBridge'
+    core.dependency 'PushwooshXCFramework_prealpha/PushwooshLiveActivities'
   end
 
   # PushwooshCore Subspec
@@ -35,14 +35,14 @@ Pod::Spec.new do |s|
 
   # PushwooshBridge Subspec
   s.subspec 'PushwooshBridge' do |bridge|
-    bridge.dependency 'PushwooshXCFramework/Core/PushwooshCore'
+    bridge.dependency 'PushwooshXCFramework_prealpha/PushwooshCore'
     bridge.vendored_frameworks = 'XCFramework/PushwooshBridge.xcframework'
   end
 
   # PushwooshLiveActivities Subspec
   s.subspec 'PushwooshLiveActivities' do |activities|
-    activities.dependency 'PushwooshXCFramework/Core/PushwooshCore'
-    activities.dependency 'PushwooshXCFramework/Core/PushwooshBridge'
+    activities.dependency 'PushwooshXCFramework_prealpha/PushwooshCore'
+    activities.dependency 'PushwooshXCFramework_prealpha/PushwooshBridge'
     activities.vendored_frameworks = 'XCFramework/PushwooshLiveActivities.xcframework'
   end
 
@@ -50,6 +50,6 @@ Pod::Spec.new do |s|
   s.subspec 'Geozones' do |geozones|
     geozones.ios.vendored_frameworks  = 'XCFramework/PushwooshGeozones.xcframework'
     geozones.frameworks  = 'CoreLocation'
-    geozones.dependency 'PushwooshXCFramework/Core'
+    geozones.dependency 'PushwooshXCFramework_prealpha/Core'
   end
 end
