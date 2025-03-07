@@ -20,9 +20,9 @@ Pod::Spec.new do |s|
 
   # Core Subspec
   s.subspec 'Core' do |ss|
-    core.ios.vendored_frameworks  = 'XCFramework/PushwooshFramework.xcframework'
-    core.library  = 'c++', 'z'
-    core.frameworks  = 'Security', 'StoreKit'
+    ss.ios.vendored_frameworks  = 'XCFramework/PushwooshFramework.xcframework'
+    ss.library  = 'c++', 'z'
+    ss.frameworks  = 'Security', 'StoreKit'
 
     ss.dependency = 'PushwooshXCFramework/PushwooshCore'
     ss.dependency = 'PushwooshXCFramework/PushwooshBridge'
