@@ -1,7 +1,3 @@
-#
-#  Be sure to run `pod spec lint Pushwoosh.podspec' to ensure this is a
-#
-
 Pod::Spec.new do |s|
   s.name         = "PushwooshXCFramework_prealpha"
   s.version      = "1.0.3"
@@ -62,5 +58,3 @@ Pod::Spec.new do |s|
     geozones.dependency 'PushwooshXCFramework/Core'
   end
 end
-
-
