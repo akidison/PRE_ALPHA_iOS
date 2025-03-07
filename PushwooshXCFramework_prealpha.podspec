@@ -19,33 +19,31 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "11.0"
 
   # Core Subspec
-  s.subspec 'Core' do |ss|
-    ss.ios.vendored_frameworks  = 'XCFramework/PushwooshFramework.xcframework'
-    ss.library  = 'c++', 'z'
-    ss.frameworks  = 'Security', 'StoreKit'
-
-    ss.dependency = 'PushwooshXCFramework/PushwooshCore'
-    ss.dependency = 'PushwooshXCFramework/PushwooshBridge'
-    ss.dependency = 'PushwooshXCFramework/PushwooshLiveActivities'
+  s.subspec 'Core' do |core|
+    core.ios.vendored_frameworks  = 'XCFramework/PushwooshFramework.xcframework'
+    core.library  = 'c++', 'z'
+    core.frameworks  = 'Security', 'StoreKit'
+    core.dependency 'PushwooshXCFramework/PushwooshCore'
+    core.dependency 'PushwooshXCFramework/PushwooshBridge'
+    core.dependency 'PushwooshXCFramework/PushwooshLiveActivities'
   end
 
   # PushwooshCore Subspec
-  s.subspec 'PushwooshCore' do |ss|
-    ss.vendored_frameworks = 'XCFramework/PushwooshCore.xcframework'
+  s.subspec 'PushwooshCore' do |core|
+    core.vendored_frameworks = 'XCFramework/PushwooshCore.xcframework'
   end
 
   # PushwooshBridge Subspec
-  s.subspec 'PushwooshBridge' do |ss|
-    ss.dependency 'PushwooshXCFramework/PushwooshCore'
-    ss.vendored_frameworks = 'XCFramework/PushwooshBridge.xcframework'
-    # If PushwooshBridge is a separate pod, add its source if not published in the central repo
+  s.subspec 'PushwooshBridge' do |bridge|
+    bridge.dependency 'PushwooshXCFramework/PushwooshCore'
+    bridge.vendored_frameworks = 'XCFramework/PushwooshBridge.xcframework'
   end
 
   # PushwooshLiveActivities Subspec
-  s.subspec 'PushwooshLiveActivities' do |ss|
-    ss.dependency 'PushwooshXCFramework/PushwooshCore'
-    ss.dependency 'PushwooshXCFramework/PushwooshBridge'
-    ss.vendored_frameworks = 'XCFramework/PushwooshLiveActivities.xcframework'
+  s.subspec 'PushwooshLiveActivities' do |activities|
+    activities.dependency 'PushwooshXCFramework/PushwooshCore'
+    activities.dependency 'PushwooshXCFramework/PushwooshBridge'
+    activities.vendored_frameworks = 'XCFramework/PushwooshLiveActivities.xcframework'
   end
 
   # Geozones Subspec
