@@ -18,17 +18,15 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
   s.ios.deployment_target = "11.0"
 
-  # Core Subspec
+  # Core Subspec (без Live Activities)
   s.subspec 'Core' do |core|
     core.ios.vendored_frameworks  = 'XCFramework/PushwooshFramework.xcframework'
     core.library  = 'c++', 'z'
     core.frameworks  = 'Security', 'StoreKit'
     core.dependency 'PushwooshXCFramework_prealpha/PushwooshCore'
     core.dependency 'PushwooshXCFramework_prealpha/PushwooshBridge'
-    core.dependency 'PushwooshXCFramework_prealpha/PushwooshLiveActivities'
   end
 
-  # PushwooshCore Subspec
   s.subspec 'PushwooshCore' do |corep|
     corep.vendored_frameworks = 'XCFramework/PushwooshCore.xcframework'
   end
@@ -39,7 +37,7 @@ Pod::Spec.new do |s|
     bridge.vendored_frameworks = 'XCFramework/PushwooshBridge.xcframework'
   end
 
-  # PushwooshLiveActivities Subspec
+  # PushwooshLiveActivities теперь можно подключить отдельно
   s.subspec 'PushwooshLiveActivities' do |activities|
     activities.dependency 'PushwooshXCFramework_prealpha/PushwooshCore'
     activities.dependency 'PushwooshXCFramework_prealpha/PushwooshBridge'
