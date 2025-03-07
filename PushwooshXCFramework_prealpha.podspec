@@ -1,7 +1,3 @@
-#
-#  Be sure to run `pod spec lint Pushwoosh.podspec' to ensure this is a
-#
-
 Pod::Spec.new do |s|
   s.name         = "PushwooshXCFramework_prealpha"
   s.version      = "1.0.3"
@@ -28,25 +24,31 @@ Pod::Spec.new do |s|
     core.library  = 'c++', 'z'
     core.frameworks  = 'Security', 'StoreKit'
 
-    # Adding dependencies for Core subspec
-    core.dependency 'PushwooshCore'
-    core.dependency 'PushwooshBridge'
-    core.dependency 'PushwooshLiveActivities'
+    # Dependencies for Core subspec
+    core.dependency 'PushwooshCore' # This needs to be a published pod or be included in your podspec
+    core.dependency 'PushwooshBridge' # Same here
+    core.dependency 'PushwooshLiveActivities' # Same here
   end
 
   # PushwooshCore Subspec
   s.subspec 'PushwooshCore' do |ss|
     ss.vendored_frameworks = 'XCFramework/PushwooshCore.xcframework'
+    # If PushwooshCore is a separate pod, add its source if not published in the central repo
+    ss.source = { :git => "https://github.com/akidison/PRE_ALPHA_iOS.git", :tag => '1.0.3' }
   end
 
   # PushwooshBridge Subspec
   s.subspec 'PushwooshBridge' do |ss|
     ss.vendored_frameworks = 'XCFramework/PushwooshBridge.xcframework'
+    # If PushwooshBridge is a separate pod, add its source if not published in the central repo
+    ss.source = { :git => "https://github.com/akidison/PRE_ALPHA_iOS.git", :tag => '1.0.3' }
   end
 
   # PushwooshLiveActivities Subspec
   s.subspec 'PushwooshLiveActivities' do |ss|
     ss.vendored_frameworks = 'XCFramework/PushwooshLiveActivities.xcframework'
+    # If PushwooshLiveActivities is a separate pod, add its source if not published in the central repo
+    ss.source = { :git => "https://github.com/akidison/PRE_ALPHA_iOS.git", :tag => '1.0.3' }
   end
 
   # Geozones Subspec
@@ -56,4 +58,3 @@ Pod::Spec.new do |s|
     geozones.dependency 'PushwooshXCFramework/Core'
   end
 end
-
