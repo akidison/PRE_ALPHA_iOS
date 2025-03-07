@@ -29,8 +29,8 @@ Pod::Spec.new do |s|
   end
 
   # PushwooshCore Subspec
-  s.subspec 'PushwooshCore' do |core|
-    core.vendored_frameworks = 'XCFramework/PushwooshCore.xcframework'
+  s.subspec 'PushwooshCore' do |corep|
+    corep.vendored_frameworks = 'XCFramework/PushwooshCore.xcframework'
   end
 
   # PushwooshBridge Subspec
