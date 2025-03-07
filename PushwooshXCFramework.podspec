@@ -4,8 +4,8 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "PushwooshXCFramework"
-  s.version      = "6.7.15"
+  s.name         = "PushwooshXCFramework_prealpha"
+  s.version      = "1.0.0"
   s.summary      = "Push notifications library by Pushwoosh."
   s.platform     = :ios
 
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   s.homepage     = "http://www.pushwoosh.com"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
-  s.author       = { "Max Konev" => "max@pushwoosh.com" }
-  s.source       = { :git => "https://github.com/Pushwoosh/pushwoosh-ios-sdk.git", :tag => s.version }
+  s.author       = { "Andrew Kis" => "akiselev@pushwoosh.com" }
+  s.source       = { :git => "https://github.com/akidison/PRE_ALPHA_iOS", :tag => s.version }
 
   s.requires_arc = true
   s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
@@ -27,6 +27,21 @@ Pod::Spec.new do |s|
     core.ios.vendored_frameworks  = 'XCFramework/PushwooshFramework.xcframework'
     core.library  = 'c++', 'z'
     core.frameworks  = 'Security', 'StoreKit'
+  end
+
+  s.subspec 'PushwooshCore' do |ss|
+    ss.dependency 'XCFramework/PushwooshCore'
+    ss.vendored_frameworks = 'iOS_SDK/XCFramework/PushwooshCore.xcframework'
+  end
+
+  s.subspec 'PushwooshSplitter' do |ss|
+    ss.dependency 'XCFramework/PushwooshBridge'
+    ss.vendored_frameworks = 'iOS_SDK/XCFramework/PushwooshBridge.xcframework'
+  end
+
+  s.subspec 'PushwooshLiveActivities' do |ss|
+    ss.dependency 'XCFramework/PushwooshLiveActivities'
+    ss.vendored_frameworks = 'iOS_SDK/XCFramework/PushwooshLiveActivities.xcframework'
   end
 
   s.subspec 'Geozones' do |geozones|
