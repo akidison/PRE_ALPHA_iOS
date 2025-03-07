@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
   s.author       = { "Andrew Kis" => "akiselev@pushwoosh.com" }
-  s.source       = { :git => "https://github.com/akidison/PRE_ALPHA_iOS", :tag => s.version }
+  s.source       = { :git => "https://github.com/akidison/PRE_ALPHA_iOS.git", :tag => s.version }
 
   s.requires_arc = true
   s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
