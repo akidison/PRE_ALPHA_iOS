@@ -30,17 +30,14 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'PushwooshCore' do |ss|
-    ss.dependency 'XCFramework/PushwooshCore'
     ss.vendored_frameworks = 'XCFramework/PushwooshCore.xcframework'
   end
 
   s.subspec 'PushwooshBridge' do |ss|
-    ss.dependency 'XCFramework/PushwooshBridge'
     ss.vendored_frameworks = 'XCFramework/PushwooshBridge.xcframework'
   end
 
   s.subspec 'PushwooshLiveActivities' do |ss|
-    ss.dependency 'XCFramework/PushwooshLiveActivities'
     ss.vendored_frameworks = 'XCFramework/PushwooshLiveActivities.xcframework'
   end
 
