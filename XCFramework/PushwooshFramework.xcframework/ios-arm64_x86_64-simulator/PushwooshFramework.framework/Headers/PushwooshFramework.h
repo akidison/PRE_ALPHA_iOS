@@ -5,6 +5,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <PushwooshBridge/PushwooshBridge.h>
+#import <PushwooshCore/PushwooshCore.h>
 
 #if TARGET_OS_IOS || TARGET_OS_WATCH
 
@@ -19,6 +21,13 @@
 #endif
 
 #define PUSHWOOSH_VERSION @"6.7.15"
+
+// TODO: - 
+#if defined(__cplusplus)
+#define let auto const
+#else
+#define let const __auto_type
+#endif
 
 
 @class Pushwoosh, PWMessage, PWNotificationCenterDelegateProxy;
@@ -195,6 +204,9 @@ Tells the delegate that the user has pressed on the push notification banner.
  `Pushwoosh` class offers access to the singleton-instance of the push manager responsible for registering the device with the APS servers, receiving and processing push notifications.
  */
 @interface Pushwoosh : NSObject
+
+#pragma mark Live Activity
++ (Class<PWLiveActivities>_Nonnull)LiveActivities NS_REFINED_FOR_SWIFT;
 
 /**
  Pushwoosh Application ID. Usually retrieved automatically from Info.plist parameter `Pushwoosh_APPID`
