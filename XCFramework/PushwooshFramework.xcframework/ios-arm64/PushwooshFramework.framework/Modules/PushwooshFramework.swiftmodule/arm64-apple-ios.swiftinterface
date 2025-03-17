@@ -13,4 +13,7 @@ extension PushwooshFramework.Pushwoosh {
   public static var LiveActivities: any PushwooshBridge.PWLiveActivities.Type {
     get
   }
+  public static var Debug: any PushwooshCore.PWDebug.Type {
+    get
+  }
 }

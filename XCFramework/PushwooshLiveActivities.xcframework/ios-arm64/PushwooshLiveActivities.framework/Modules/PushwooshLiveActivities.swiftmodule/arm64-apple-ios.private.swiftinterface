@@ -36,6 +36,14 @@ public struct PushwooshLiveActivityContentStateData : Swift.Codable, Swift.Hasha
   public init(from decoder: any Swift.Decoder) throws
 }
 extension PushwooshBridge.PWLiveActivities {
+  public static func sendPushToStartLiveActivity(token: Swift.String)
+  public func sendPushToStartLiveActivity(token: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  public static func startLiveActivity(token: Swift.String, activityId: Swift.String)
+  public static func startLiveActivity(token: Swift.String, activityId: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  public static func stopLiveActivity()
+  public static func stopLiveActivity(completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  public static func stopLiveActivity(activityId: Swift.String)
+  public static func stopLiveActivity(activityId: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @available(iOS 16.1, *)
   public static func setup<Attributes>(_ activityType: Attributes.Type) where Attributes : PushwooshLiveActivities.PushwooshLiveActivityAttributes
   @available(iOS 16.1, *)
@@ -61,7 +69,14 @@ public struct DefaultLiveActivityAttributes : PushwooshLiveActivities.PushwooshL
   public init(from decoder: any Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc(PushwooshLiveActivitiesImplementationSetup) public class PushwooshLiveActivitiesImplementationSetup : ObjectiveC.NSObject, PushwooshBridge.PWLiveActivities {
-  @objc public static func startLiveActivity(withToken token: Swift.String, activityId: Swift.String)
+  @objc public static func sendPushToStartLiveActivity(token: Swift.String)
+  @objc public static func sendPushToStartLiveActivity(token: Swift.String, completion: @escaping (((any Swift.Error)?) -> Swift.Void))
+  @objc public static func startLiveActivity(token: Swift.String, activityId: Swift.String)
+  @objc public static func startLiveActivity(token: Swift.String, activityId: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc public static func stopLiveActivity()
+  @objc public static func stopLiveActivity(completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc public static func stopLiveActivity(activityId: Swift.String)
+  @objc public static func stopLiveActivity(activityId: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc public static func liveActivities() -> Swift.AnyClass
   @available(iOS 16.1, *)
   public static func defaultSetup()

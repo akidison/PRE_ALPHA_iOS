@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import <PushwooshBridge/PushwooshBridge.h>
 #import <PushwooshCore/PushwooshCore.h>
+#import <PushwooshCore/PushwooshLog.h>
 
 #if TARGET_OS_IOS || TARGET_OS_WATCH
 
@@ -21,14 +22,6 @@
 #endif
 
 #define PUSHWOOSH_VERSION @"6.7.15"
-
-// TODO: - 
-#if defined(__cplusplus)
-#define let auto const
-#else
-#define let const __auto_type
-#endif
-
 
 @class Pushwoosh, PWMessage, PWNotificationCenterDelegateProxy;
 
@@ -205,8 +198,11 @@ Tells the delegate that the user has pressed on the push notification banner.
  */
 @interface Pushwoosh : NSObject
 
-#pragma mark Live Activity
+#pragma mark - Live Activity
 + (Class<PWLiveActivities>_Nonnull)LiveActivities NS_REFINED_FOR_SWIFT;
+
+#pragma mark - Logging
++ (Class<PWDebug>_Nonnull)Debug NS_REFINED_FOR_SWIFT;
 
 /**
  Pushwoosh Application ID. Usually retrieved automatically from Info.plist parameter `Pushwoosh_APPID`
@@ -582,8 +578,10 @@ Unregisters from push notifications.
  @endcode
  */
 
-- (void)sendPushToStartLiveActivityToken:(NSString *_Nullable)token;
-- (void)sendPushToStartLiveActivityToken:(NSString *_Nullable)token completion:(void (^ _Nullable)(NSError * _Nullable))completion;
+- (void)sendPushToStartLiveActivityToken:(NSString *_Nullable)token
+__attribute__((deprecated("Since 6.8.0: This method is deprecated and will be removed in a future release. Use Pushwoosh.LiveActivities.sendPushToStartLiveActivity(token: ) instead.")));
+- (void)sendPushToStartLiveActivityToken:(NSString *_Nullable)token completion:(void (^ _Nullable)(NSError * _Nullable))completion
+__attribute__((deprecated("Since 6.8.0: This method is deprecated and will be removed in a future release. Use Pushwoosh.LiveActivities.sendPushToStartLiveActivity(token: , completion: ) instead.")));;
 
 /**
  Sends live activity token to the server.
@@ -620,8 +618,15 @@ Unregisters from push notifications.
  @param token Activity token
  @param activityId Activity ID for updating Live Activities by segments
  */
-- (void)startLiveActivityWithToken:(NSString * _Nonnull)token activityId:(NSString * _Nullable)activityId;
-- (void)startLiveActivityWithToken:(NSString * _Nonnull)token activityId:(NSString * _Nullable)activityId completion:(void (^ _Nullable)(NSError * _Nullable error))completion;
+- (void)startLiveActivityWithToken:(NSString * _Nonnull)token
+                        activityId:(NSString * _Nullable)activityId 
+__attribute__((deprecated("Since 6.8.0: This method is deprecated and will be removed in a future release. Use Pushwoosh.LiveActivities.startLiveActivity(token: , activityId: ) instead.")));
+;
+- (void)startLiveActivityWithToken:(NSString * _Nonnull)token 
+                        activityId:(NSString * _Nullable)activityId
+                        completion:(void (^ _Nullable)(NSError * _Nullable error))completion
+__attribute__((deprecated("Since 6.8.0: This method is deprecated and will be removed in a future release. Use startLiveActivity(token: , activityId: , completion: ) instead.")));
+;
 
 /**
  Call this method when you finish working with the live activity.
@@ -636,11 +641,16 @@ Unregisters from push notifications.
  }
  @endcode
  */
-- (void)stopLiveActivity;
-- (void)stopLiveActivityWithCompletion:(void (^ _Nullable)(NSError * _Nullable error))completion;
+- (void)stopLiveActivity
+__attribute__((deprecated("Since 6.8.0: This method is deprecated and will be removed in a future release. Use Pushwoosh.LiveActivities.stopLiveActivity() instead.")));
 
-- (void)stopLiveActivityWith:(NSString *_Nullable)activityId;
-- (void)stopLiveActivityWith:(NSString *_Nullable)activityId completion:(void (^ _Nullable)(NSError * _Nullable error))completion;
+- (void)stopLiveActivityWithCompletion:(void (^ _Nullable)(NSError * _Nullable error))completion
+__attribute__((deprecated("Since 6.8.0: This method is deprecated and will be removed in a future release. Use Pushwoosh.LiveActivities.stopLiveActivity(completion: ) instead.")));
+
+- (void)stopLiveActivityWith:(NSString *_Nullable)activityId
+__attribute__((deprecated("Since 6.8.0: This method is deprecated and will be removed in a future release. Use Pushwoosh.LiveActivities.stopLiveActivity(activityId: ) instead.")));
+- (void)stopLiveActivityWith:(NSString *_Nullable)activityId completion:(void (^ _Nullable)(NSError * _Nullable error))completion
+__attribute__((deprecated("Since 6.8.0: This method is deprecated and will be removed in a future release. Use Pushwoosh.LiveActivities.stopLiveActivity(activityId: , completion: ) instead.")));
 
 @end
 

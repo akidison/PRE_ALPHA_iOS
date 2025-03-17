@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/PushwooshLiveActivities-Swift.h</key>
 		<data>
-		8spiK3pb+9qz0R298AATeRK6+S4=
+		TCMPkU8TFssb1aL9qB2hL1A+wAE=
 		</data>
 		<key>Headers/PushwooshLiveActivities.h</key>
 		<data>
@@ -18,23 +18,23 @@
 		</data>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		dcGOju5gmUk3fk/uhlDljpfmLuo=
+		pZJaE4zKmPAs/+8OIlVbTH3pSa8=
 		</data>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		uQEmtFwD4vYQfnBCw1nNTLdZE0A=
+		DJQhGp96xdyXjPYSMRuLw45oN4A=
 		</data>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		jBjhh3nWMMGqhv0DcnV66lkxxjM=
+		+oPwdW+sB40cl7Zu+zW7AyglhF8=
 		</data>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		uQEmtFwD4vYQfnBCw1nNTLdZE0A=
+		DJQhGp96xdyXjPYSMRuLw45oN4A=
 		</data>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		9Kb6af7YD2IcbCAuAWdL4bdRBrc=
+		SxfCdcmBRE8349K7zj5C79vWA2U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,7 +47,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ke9rqYfT1tFJU+GtEuSKz322ZtAJrBEWRq5LkpWFC7I=
+			LZbP4R5m6yf/0Mv1mSDW+wXs16eJZfrrsBaoY9u0Ujg=
 			</data>
 		</dict>
 		<key>Headers/PushwooshLiveActivities.h</key>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uCGHDRfyPeXcyHFwQbIOHCsmzQ16zdiVdWqU07m4DpM=
+			QkFqAvdPynbtfWAeiDyJfM0Hcaj0Kdcmt7DF8BNcl1U=
 			</data>
 		</dict>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ia7Y20A/WBLzulAObsBXi7i0sTa2DQM3/X/7f9bRspE=
+			GAhZhTcE8gf3cs1DUXxXQc76NpTXic5cMm5NUDeBEMc=
 			</data>
 		</dict>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qk2MXndq+jC6DiPpauAkAn7+njoFZLqKdqqXWwymeF4=
+			t2XMc9UsmgsET8rtV2VOypAvEtD4cJdr4J5JL3kSUIA=
 			</data>
 		</dict>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ia7Y20A/WBLzulAObsBXi7i0sTa2DQM3/X/7f9bRspE=
+			GAhZhTcE8gf3cs1DUXxXQc76NpTXic5cMm5NUDeBEMc=
 			</data>
 		</dict>
 		<key>Modules/PushwooshLiveActivities.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZipAXLNqaP6cv/n+Y+A10hf6Twb5ZzBnb22QQaleD4E=
+			XR6Z3ZOynt1R+WUetgltBCG+kwQ+8T2yZk1k3Ugaobc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

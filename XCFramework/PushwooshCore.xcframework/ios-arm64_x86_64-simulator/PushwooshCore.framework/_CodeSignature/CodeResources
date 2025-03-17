@@ -4,17 +4,37 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/PWCConfig.h</key>
+		<data>
+		NFd9tja2R4Ona2OaVgqkEXO4YZQ=
+		</data>
 		<key>Headers/PWCConstants.h</key>
 		<data>
-		aTJd2jqE4yAJ6oYRprwQOzsVMjo=
+		NaIvo2mytGgwrwgYvLo4CaSXFPM=
 		</data>
-		<key>Headers/PWCPreferences.h</key>
+		<key>Headers/PWCNotificationAppSettings.h</key>
 		<data>
-		iEzts1stSoauaxncSMJAGrTg3oE=
+		T+r+iL0MeuXH+rAdhwi9namyBgU=
+		</data>
+		<key>Headers/PWCoreRequest.h</key>
+		<data>
+		xdsFYuZeLG8AQTmmzeXXnn4VI/w=
+		</data>
+		<key>Headers/PWCoreRequestManager.h</key>
+		<data>
+		TcqPvXabcrlAzi/00b/TXK4BvKM=
+		</data>
+		<key>Headers/PWSettings.h</key>
+		<data>
+		4a2nvl1UlOSHuGnxH/TkjBUwmJ4=
 		</data>
 		<key>Headers/PushwooshCore.h</key>
 		<data>
-		pqFjYrHD4pTrTUA0BVXznG3Zc8E=
+		qrRACRxTaCdz5Emwa+gKPnX8+pE=
+		</data>
+		<key>Headers/PushwooshLog.h</key>
+		<data>
+		/BTA4Sql9g6vQvRvezHkJyRGP0A=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -27,25 +47,60 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/PWCConfig.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RG8FAmclKvUnHOCkNrLmwVsanA+X0ZRyJyCFoDpaaH8=
+			</data>
+		</dict>
 		<key>Headers/PWCConstants.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2mvymIGvTSVGjrMiuYX677C1okg1y7K12qcuEHYQ4sY=
+			MalHt3JIiihk7GJ5B1KoKLNUEH5qb94M+BXTDlPHBuo=
 			</data>
 		</dict>
-		<key>Headers/PWCPreferences.h</key>
+		<key>Headers/PWCNotificationAppSettings.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1Y7V8ejwLlIHdI0v+TewAubdJjk+yrSAXFQ8YG2mACU=
+			bxJt3iJEj9FqmL4A3kuG5fvWDQ3ZruDzy3FY+jvmnoo=
+			</data>
+		</dict>
+		<key>Headers/PWCoreRequest.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GpmeTCDeeyK+WRMZlndn5/d7bgpvB80CrFow3MxTo4A=
+			</data>
+		</dict>
+		<key>Headers/PWCoreRequestManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dX7cvfxDGQphsCqfJ0+1C5RCCgmsedqKDHyqK5AfoRA=
+			</data>
+		</dict>
+		<key>Headers/PWSettings.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Jpz/qm1/DVrIS/hFpgTO5tcljlzwSD/uRRI5UqEycyI=
 			</data>
 		</dict>
 		<key>Headers/PushwooshCore.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5xmgog9WMyM3GztykJ+oIIrr3RKDv1nqBW68rxbolVY=
+			v9SjzhVyKePrVbrwwvLGLgFKwzLsg335qbv3651+bPE=
+			</data>
+		</dict>
+		<key>Headers/PushwooshLog.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4M5fHYp/3FvJcsz+SSXrRfbgJAP0qTaPiwP9Ynr+Shc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

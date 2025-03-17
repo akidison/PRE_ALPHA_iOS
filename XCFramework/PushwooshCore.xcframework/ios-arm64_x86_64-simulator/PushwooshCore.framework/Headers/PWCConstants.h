@@ -9,6 +9,7 @@
 #ifndef PWCConstants_h
 #define PWCConstants_h
 
+#define kBaseDefaultURLOld @"https://cp.pushwoosh.com/json/1.3/"
 #define kBaseDefaultURLFormat @"https://%@.api.pushwoosh.com/json/1.3/"
 
 #define DEVICE_TYPE 1

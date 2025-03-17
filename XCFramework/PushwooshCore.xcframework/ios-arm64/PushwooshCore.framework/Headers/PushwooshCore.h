@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <PushwooshCore/PWCPreferences.h>
+#import <PushwooshCore/PWSettings.h>
 #import <PushwooshCore/PWCConstants.h>
+#import <PushwooshCore/PWCConfig.h>
+#import <PushwooshCore/PushwooshLog.h>
+#import <PushwooshCore/PWCoreRequest.h>
+#import <PushwooshCore/PWCoreRequestManager.h>
 
 #define PUSHWOOSH_VERSION @"6.7.15"
 
-@interface PushwooshCore : NSObject
+@interface PushwooshCoreManager : NSObject
+
++ (nonnull id<IPWCoreRequestManager>)sharedManager;
 
 @end
 

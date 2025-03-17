@@ -304,7 +304,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS_NAMED("PushwooshLiveActivitiesImplementationSetup")
 @interface PushwooshLiveActivitiesImplementationSetup : NSObject <PWLiveActivities>
++ (void)sendPushToStartLiveActivityWithToken:(NSString * _Nonnull)token;
++ (void)sendPushToStartLiveActivityWithToken:(NSString * _Nonnull)token completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 + (void)startLiveActivityWithToken:(NSString * _Nonnull)token activityId:(NSString * _Nonnull)activityId;
++ (void)startLiveActivityWithToken:(NSString * _Nonnull)token activityId:(NSString * _Nonnull)activityId completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
++ (void)stopLiveActivity;
++ (void)stopLiveActivityWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
++ (void)stopLiveActivityWithActivityId:(NSString * _Nonnull)activityId;
++ (void)stopLiveActivityWithActivityId:(NSString * _Nonnull)activityId completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 + (Class _Nonnull)liveActivities SWIFT_WARN_UNUSED_RESULT;
 + (void)defaultStart:(NSString * _Nonnull)activityId attributes:(NSDictionary<NSString *, id> * _Nonnull)attributes content:(NSDictionary<NSString *, id> * _Nonnull)content SWIFT_AVAILABILITY(ios,introduced=16.1);
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

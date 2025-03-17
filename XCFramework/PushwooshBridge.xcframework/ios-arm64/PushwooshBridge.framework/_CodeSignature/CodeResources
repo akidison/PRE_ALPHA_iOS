@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/PushwooshBridge-Swift.h</key>
 		<data>
-		lJkuo3RpRq0mrAYikJ2o5Ju0+O8=
+		OE8XtD9aZzx59hZz4X0ZbdpxqKw=
 		</data>
 		<key>Headers/PushwooshBridge.h</key>
 		<data>
@@ -18,23 +18,23 @@
 		</data>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		sLTDXrN/gjK7+hPkb8Pxi5vzxDY=
+		ByDREVuc1/Xwqcz2bL4epYmdn7E=
 		</data>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		0MfCOkzPCObSP8JfD2FxFEhY9L4=
+		sZEdob9FUwi7wWM4vRrZL4p3qA0=
 		</data>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		XBqKhhgDMbeBrhFRcmUP7hVNNvY=
+		Ervlas/JYDPudm1fIGehwVnKAJU=
 		</data>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		0MfCOkzPCObSP8JfD2FxFEhY9L4=
+		sZEdob9FUwi7wWM4vRrZL4p3qA0=
 		</data>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		tESqX/hWTJIzJO7IrpZX92Px0bY=
+		+m6Ucs3JgMoB5GtyPrQZU7zd4p0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,7 +47,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uUiEoQcd/drggWtf1e3KO0vosbdOczcJwrJUj+zdjy8=
+			ERcM5cBv1pMjoNmYtwF8ontK2EqhVqpfM3s/tXvelqk=
 			</data>
 		</dict>
 		<key>Headers/PushwooshBridge.h</key>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			etFN4Lx+azW8Ddj5q4T3rbycmvaieGaksqn+gQdLvM0=
+			vhwbRsRnsZJO1Yjon9UHpfu3fZJRI1YY4KNLV/xKiww=
 			</data>
 		</dict>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I4yEsWf67L3Oe/QgfgpnpCPqXPdjHtoJ3sSMO/FMhr0=
+			f7GjwDeEgMJFmdZjezajRp6ekTOhNhh2SHIO/ug33So=
 			</data>
 		</dict>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vAPtWWpbPMy2zJNFoOIscL82oxPg3wiHm8AVMKrGc6Y=
+			fVoX/HkMgysYzRItdZUBOKaoQ8r5q0I9GdtqPEi2GTY=
 			</data>
 		</dict>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I4yEsWf67L3Oe/QgfgpnpCPqXPdjHtoJ3sSMO/FMhr0=
+			f7GjwDeEgMJFmdZjezajRp6ekTOhNhh2SHIO/ug33So=
 			</data>
 		</dict>
 		<key>Modules/PushwooshBridge.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BDUJIPfuYzgq5zR3yVVGB8sjXAhdy2Bk6pxuX0S0nkE=
+			c0tKOGoiOyb0Rw9Zf0b6G3dwIhm3/WxN0PvqG4iKNfA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

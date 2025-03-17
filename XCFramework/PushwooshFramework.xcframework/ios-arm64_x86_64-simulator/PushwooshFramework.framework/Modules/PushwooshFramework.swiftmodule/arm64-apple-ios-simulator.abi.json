@@ -93,6 +93,67 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "Debug",
+            "printedName": "Debug",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ExistentialMetatype",
+                "printedName": "any PushwooshCore.PWDebug.Type",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PWDebug",
+                    "printedName": "PushwooshCore.PWDebug",
+                    "usr": "c:objc(pl)PWDebug"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So9PushwooshC0A9FrameworkE5DebugSo7PWDebug_pXpvpZ",
+            "mangledName": "$sSo9PushwooshC0A9FrameworkE5DebugSo7PWDebug_pXpvpZ",
+            "moduleName": "PushwooshFramework",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ExistentialMetatype",
+                    "printedName": "any PushwooshCore.PWDebug.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWDebug",
+                        "printedName": "PushwooshCore.PWDebug",
+                        "usr": "c:objc(pl)PWDebug"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So9PushwooshC0A9FrameworkE5DebugSo7PWDebug_pXpvgZ",
+                "mangledName": "$sSo9PushwooshC0A9FrameworkE5DebugSo7PWDebug_pXpvgZ",
+                "moduleName": "PushwooshFramework",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
           }
         ],
         "declKind": "Class",
