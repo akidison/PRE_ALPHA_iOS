@@ -9,12 +9,59 @@
 #if !targetEnvironment(macCatalyst)
 import Foundation
 import ActivityKit
+import PushwooshCore
+import PushwooshBridge
 
 enum LiveActivityError: Error {
     case incorrectTypeLA(String)
 }
 
-public class PushwooshLiveActivitiesImplementationSetup: NSObject {
+@objc(PushwooshLiveActivitiesImplementationSetup)
+public class PushwooshLiveActivitiesImplementationSetup: NSObject, PWLiveActivities {
+    
+    public static func sendPushToStartLiveActivity(token: String) {
+        sendPushToStartLiveActivity(token: token, completion: { _ in })
+    }
+    
+    public static func sendPushToStartLiveActivity(token: String, completion: @escaping (((any Error)?) -> Void)) {
+        let requestParameters = ActivityRequestParameters(pushToStartToken: token)
+        let requst = PWRequestSetPushToStartToken(parameters: requestParameters)
+        NetworkManager.shared.sendInnerRequest(request: requst, completion: completion)
+    }
+    
+    public static func startLiveActivity(token: String, activityId: String) {
+        startLiveActivity(token: token, activityId: activityId, completion: { _ in })
+    }
+    
+    public static func startLiveActivity(token: String, activityId: String, completion: @escaping ((any Error)?) -> Void) {
+        let requestParameters = ActivityRequestParameters(activityId: activityId, token: token)
+        let request = PWRequestSetActivityToken(parameters: requestParameters)
+        NetworkManager.shared.sendInnerRequest(request: request, completion: completion)
+    }
+    
+    public static func stopLiveActivity() {
+        stopLiveActivity(completion: { _ in })
+    }
+    
+    public static func stopLiveActivity(completion: @escaping ((any Error)?) -> Void) {
+        let request = PWRequestStopLiveActivity(parameters: ActivityRequestParameters())
+        NetworkManager.shared.sendInnerRequest(request: request, completion: completion)
+    }
+    
+    public static func stopLiveActivity(activityId: String) {
+        stopLiveActivity(activityId: activityId, completion: { _ in })
+    }
+    
+    public static func stopLiveActivity(activityId: String, completion: @escaping ((any Error)?) -> Void) {
+        let requestParameters = ActivityRequestParameters(activityId: activityId)
+        let request = PWRequestStopLiveActivity(parameters: requestParameters)
+        NetworkManager.shared.sendInnerRequest(request: request, completion: completion)
+    }
+    
+    @objc
+    public static func liveActivities() -> AnyClass {
+        return PushwooshLiveActivitiesImplementationSetup.self
+    }
     
     /**
      Configures the live activity for the specified attributes.
@@ -66,7 +113,7 @@ public class PushwooshLiveActivitiesImplementationSetup: NSObject {
                     contentState: contentState,
                     pushType: .token)
         } catch let error {
-            print("Start default live activity error: \(error.localizedDescription)")
+            PushwooshLog.pushwooshLog(.PW_LL_ERROR, className: self, message: "Start default live activity error: \(error.localizedDescription)")
         }
     }
 
@@ -84,20 +131,24 @@ public class PushwooshLiveActivitiesImplementationSetup: NSObject {
     @available(iOS 17.2, *)
     public static func setPushToStartToken<Attributes: ActivityAttributes>(_ activityType: Attributes.Type, withToken: String) {
         do {
-            try validateAndSendPushToken(for: "\(activityType)", withToken: withToken)
+            try validateAndSendPushToken(for: "\(activityType)", token: withToken)
         } catch {
-            print("Failed to set push token for activity type \(activityType): \(error.localizedDescription)")
+            PushwooshLog.pushwooshLog(.PW_LL_ERROR, className: self, message: "Failed to set push token for activity type \(activityType): \(error.localizedDescription)")
         }
     }
     
     @available(iOS 17.2, *)
-    private static func validateAndSendPushToken(for activityType: String, withToken: String) throws {
+    private static func validateAndSendPushToken(for activityType: String, token: String) throws {
         guard activityType.addingPercentEncoding(withAllowedCharacters: .urlUserAllowed) != nil else {
             throw LiveActivityError.incorrectTypeLA("Unable to convert activity type to a URL-encoded string.")
         }
-        
-        Pushwoosh.sharedInstance().sendPush(toStartLiveActivityToken: withToken)
+        let requestParameters = ActivityRequestParameters(pushToStartToken: token)
+        let request = PWRequestSetPushToStartToken(parameters: requestParameters)
+        NetworkManager.shared.sendInnerRequest(request: request) { error in
+            handlePushTokenResult(error: error)
+        }
     }
+
     
     // MARK: - OBSERVE LIVE ACTIVITY
     @available(iOS 16.1, *)
@@ -130,7 +181,12 @@ public class PushwooshLiveActivitiesImplementationSetup: NSObject {
             for await state in activity.activityStateUpdates {
                 switch state {
                 case .dismissed:
-                    try await Pushwoosh.sharedInstance().stopLiveActivity(with: activity.attributes.pushwoosh.activityId)
+                    let requestParameters = ActivityRequestParameters(activityId: activity.attributes.pushwoosh.activityId, token: "")
+                    let request = PWRequestSetActivityToken(parameters: requestParameters)
+                    NetworkManager.shared.sendInnerRequest(request: request) { error in
+                        handlePushTokenResult(error: error)
+                    }
+                    break
                 default:
                     break
                 }
@@ -143,9 +199,22 @@ public class PushwooshLiveActivitiesImplementationSetup: NSObject {
         Task {
             for await pushToken in activity.pushTokenUpdates {
                 let token = pushToken.map { String(format: "%02x", $0) }.joined()
-                try await Pushwoosh.sharedInstance().startLiveActivity(withToken: token, activityId: activity.attributes.pushwoosh.activityId)
+                let requestParameters = ActivityRequestParameters(activityId: activity.attributes.pushwoosh.activityId, token: token)
+                let request = PWRequestSetActivityToken(parameters: requestParameters)
+                NetworkManager.shared.sendInnerRequest(request: request) { error in
+                    handlePushTokenResult(error: error)
+                }
             }
         }
+    }
+    
+    private static func handlePushTokenResult(error: Error?) {
+        let logLevel: PUSHWOOSH_LOG_LEVEL = error == nil ? .PW_LL_INFO : .PW_LL_ERROR
+        let message = error == nil ?
+            "Successfully sent live activity token." :
+            "Failed to send push token. Error: \(error!.localizedDescription)"
+        
+        PushwooshLog.pushwooshLog(logLevel, className: self, message: message)
     }
 }
 #endif

@@ -79,7 +79,7 @@
 
 - (void)setTags:(NSDictionary *)tags withCompletion:(PushwooshErrorHandler)completion {
 	if (![tags isKindOfClass:[NSDictionary class]]) {
-		PWLogError(@"tags must be NSDictionary");
+        [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"tags must be NSDictionary"];
 		return;
 	}
 
@@ -90,9 +90,13 @@
 
 	[_requestManager sendRequest:request completion:^(NSError *error) {
 		if (error) {
-			PWLogError(@"setTags failed");
+            [PushwooshLog pushwooshLog:PW_LL_ERROR
+                             className:self
+                               message:@"setTags failed"];
         } else {
-            PWLogInfo(@"Tags successfully set: %@", tags);
+            [PushwooshLog pushwooshLog:PW_LL_INFO
+                             className:self
+                               message:[NSString stringWithFormat:@"Tags successfully set: %@", tags]];
         }
 
 		if (completion)
@@ -121,7 +125,7 @@
 		} else {
 			NSDictionary *tags = [[PWCache cache] getTags];
 			if (tags) {
-                PWLogError(@"loadTags failed, return cached tags");
+                [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"loadTags failed, return cached tags"];
 
 				if ([[PushNotificationManager pushManager].delegate respondsToSelector:@selector(onTagsReceived:)]) {
 					[[PushNotificationManager pushManager].delegate onTagsReceived:tags];
@@ -131,7 +135,7 @@
 					successHandler(tags);
 				}
 			} else {
-				PWLogError(@"loadTags failed");
+                [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"loadTags failed"];
 
 				if ([[PushNotificationManager pushManager].delegate respondsToSelector:@selector(onTagsFailedToReceive:)]) {
 				   [[PushNotificationManager pushManager].delegate onTagsFailedToReceive:error];
@@ -151,12 +155,12 @@
 
 - (void)setEmailTags:(NSDictionary *)tags forEmail:(NSString *)email withCompletion:(PushwooshErrorHandler)completion {
     if (![tags isKindOfClass:[NSDictionary class]]) {
-        PWLogError(@"tags must be NSDictionary");
+        [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"tags must be NSDictionary"];
         return;
     }
     
     if (email == nil) {
-        PWLogError(@"email cannot be nil");
+        [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"email cannot be nil"];
         return;
     }
     
@@ -168,9 +172,11 @@
     
     [_requestManager sendRequest:request completion:^(NSError *error) {
         if (error == nil) {
-            PWLogInfo(@"Email tags successfully set for email: %@ with tags: %@", email, tags);
+            [PushwooshLog pushwooshLog:PW_LL_INFO
+                             className:self
+                               message:[NSString stringWithFormat:@"Email tags successfully set for email: %@ with tags: %@", email, tags]];
         } else {
-            PWLogError(@"setEmailTags failed");
+            [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"setEmailTags failed"];
         }
         
         if (completion)
@@ -225,7 +231,7 @@
                 }
             }
         } else {
-            PWLogError(@"sending appOpen failed");
+            [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"sending appOpen failed"];
         }
         
         if (completion) {
@@ -284,9 +290,11 @@
         
         [_requestManager sendRequest:request completion:^(NSError *error) {
             if (error) {
-                PWLogError(@"sendStats failed");
+                [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"sendStats failed"];
             } else {
-                PWLogInfo(@"sendStats executed with parameters: %@", pushDict);
+                [PushwooshLog pushwooshLog:PW_LL_INFO
+                                 className:self
+                                   message:[NSString stringWithFormat:@"sendStats executed with parameters: %@", pushDict]];
             }
         }];
     };
@@ -305,7 +313,7 @@
 - (void)sendPushToStartLiveActivityToken:(NSString *)token completion:(void (^)(NSError * _Nullable))completion {
     [_requestManager sendRequest:[self sendStartLiveActivityRequestWithToken:token] completion:^(NSError *error) {
         if (error) {
-            PWLogError(@"Start Live Activity request failed");
+            [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"Start Live Activity request failed"];
         }
         
         if (completion)
@@ -316,7 +324,7 @@
 - (void)startLiveActivityWithToken:(NSString *)token activityId:(NSString *)activityId completion:(void (^)(NSError * _Nullable))completion {
     [_requestManager sendRequest:[self sendLiveActivityRequestWithToken:token activityId:activityId] completion:^(NSError *error) {
         if (error) {
-            PWLogError(@"Live Activity request failed");
+            [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"Live Activity request failed"];
         }
         
         if (completion)
@@ -328,7 +336,7 @@
     NSString *activityIdentifier = activityId == nil ? nil : activityId;
     [_requestManager sendRequest:[self sendLiveActivityRequestWithToken:nil activityId:activityIdentifier] completion:^(NSError *error) {
         if (error) {
-            PWLogError(@"Live Activity request failed");
+            [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:@"Live Activity request failed"];
         }
         
         if (completion)

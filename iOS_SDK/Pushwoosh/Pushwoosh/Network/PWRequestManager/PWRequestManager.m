@@ -113,11 +113,11 @@
 - (void)sendRequestInternal:(PWRequest *)request completion:(void (^)(NSError *error))completion {
     //check server communication enabled
     if (![[PWServerCommunicationManager sharedInstance] isServerCommunicationAllowed]) {
-        NSString *error = @"Communication with Pushwoosh is disabled. To send the request you have to enable the server communication using method startServerCommunication of Pushwoosh class.";
+        NSString *errorStr = @"Communication with Pushwoosh is disabled. To send the request you have to enable the server communication using method startServerCommunication of Pushwoosh class.";
         if (completion) {
-            completion([PWUtils pushwooshErrorWithCode:PWErrorCommunicationDisabled description:error]);
+            completion([PWUtils pushwooshErrorWithCode:PWErrorCommunicationDisabled description:errorStr]);
         } else {
-            PWLogError(error);
+            [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:errorStr];
         }
         return;
     }
@@ -150,7 +150,9 @@
         NSInteger retryCount = [self retryCountWith:request];
         
         if (retryCount >= 0) {
-            PWLogDebug(@"Retry count for request %@: %ld", request.methodName, (long)retryCount);
+            [PushwooshLog pushwooshLog:PW_LL_DEBUG
+                             className:self
+                               message:[NSString stringWithFormat:@"Retry count for request %@: %ld", request.methodName, (long)retryCount]];
             [urlRequest addValue:[NSString stringWithFormat:@"%ld", [self retryCountWith:request]] forHTTPHeaderField:@"X-Retry-Count"];
         }
     }
@@ -295,15 +297,20 @@
     if (error == nil) {
         NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
         
-        PWLogDebug(@"\n"
-                  @"x\n"
-                  @"|    Pushwoosh request:\n"
-                  @"| Url:      %@\n"
-                  @"| Payload:  %@\n"
-                  @"| Status:   \"%ld %@\"\n"
-                  @"| Response: %@\n"
-                  @"x",
-                  requestUrl, requestData, (long)[httpResponse statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]], responseString);
+        NSString *requestLogStr = [NSString stringWithFormat:@"\n"
+                                     @"x\n"
+                                     @"|    Pushwoosh request:\n"
+                                     @"| Url:      %@\n"
+                                     @"| Payload:  %@\n"
+                                     @"| Status:   \"%ld %@\"\n"
+                                     @"| Response: %@\n"
+                                     @"x",
+                                     requestUrl, requestData, (long)[httpResponse statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]], responseString];
+        
+        
+        [PushwooshLog pushwooshLog:PW_LL_DEBUG
+                         className:self
+                           message:requestLogStr];
         
         NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
         
@@ -367,7 +374,9 @@
 			}
 		}
 	} else {
-		PWLogError(@"Sending %@ failed, %@", request.methodName, error.description);
+        [PushwooshLog pushwooshLog:PW_LL_ERROR
+                         className:self
+                           message:[NSString stringWithFormat:@"Sending %@ failed, %@", request.methodName, error.description]];
 	}
 
 	*outError = error;
@@ -377,14 +386,18 @@
 	NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
 
-    PWLogDebug(@"%@", [NSString stringWithFormat:@"Pushwoosh In-App: will download data:%@\n", url.absoluteString]);
+    [PushwooshLog pushwooshLog:PW_LL_DEBUG
+                     className:self
+                       message:[NSString stringWithFormat:@"Pushwoosh In-App: will download data:%@\n", url.absoluteString]];
 
 	[[session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
 		if (!completion)
 			return;
 
 		if (error) {
-			PWLogError(@"%@", [NSString stringWithFormat:@"Pushwoosh In-App failed to download data: %@", error.localizedDescription]);
+            [PushwooshLog pushwooshLog:PW_LL_ERROR
+                             className:self
+                               message:[NSString stringWithFormat:@"Pushwoosh In-App failed to download data: %@", error.localizedDescription]];
 			completion(nil, error);
 		} else {
 			completion(location.path, nil);

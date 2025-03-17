@@ -1,16 +1,44 @@
 //
-//  PushwooshSwiftInterface.swift
-//  Pushwoosh
+//  PWLiveActivitiesExtension.swift
+//  PushwooshLiveActivities
 //
-//  Created by André Kis on 08.08.24.
-//  Copyright © 2024 Pushwoosh. All rights reserved.
+//  Created by André Kis on 04.03.25.
+//  Copyright © 2025 Pushwoosh. All rights reserved.
 //
-#if !targetEnvironment(macCatalyst)
-import Foundation
 
-@objc
-public class PushwooshLiveActivities: NSObject {
+import Foundation
+import PushwooshCore
+import PushwooshBridge
+
+public extension PWLiveActivities {
+    static func sendPushToStartLiveActivity(token: String) {
+        PushwooshLiveActivitiesImplementationSetup.sendPushToStartLiveActivity(token: token)
+    }
+    func sendPushToStartLiveActivity(token: String, completion: @escaping (Error?) -> Void) {
+        PushwooshLiveActivitiesImplementationSetup.sendPushToStartLiveActivity(token: token, completion: completion)
+    }
     
+    static func startLiveActivity(token: String, activityId: String) {
+        PushwooshLiveActivitiesImplementationSetup.startLiveActivity(token: token, activityId: activityId)
+    }
+    static func startLiveActivity(token: String, activityId: String, completion: @escaping (Error?) -> Void) {
+        PushwooshLiveActivitiesImplementationSetup.startLiveActivity(token: token, activityId: activityId, completion: completion)
+    }
+    
+    static func stopLiveActivity() {
+        PushwooshLiveActivitiesImplementationSetup.stopLiveActivity()
+    }
+    static func stopLiveActivity(completion: @escaping (Error?) -> Void) {
+        PushwooshLiveActivitiesImplementationSetup.stopLiveActivity(completion: completion)
+    }
+    
+    static func stopLiveActivity(activityId: String) {
+        PushwooshLiveActivitiesImplementationSetup.stopLiveActivity(activityId: activityId)
+    }
+    static func stopLiveActivity(activityId: String, completion: @escaping (Error?) -> Void) {
+        PushwooshLiveActivitiesImplementationSetup.stopLiveActivity(activityId: activityId, completion: completion)
+    }
+
     /**
      Sets up the Pushwoosh live activity for the specified attributes.
      
@@ -25,7 +53,7 @@ public class PushwooshLiveActivities: NSObject {
      as it will not be available on earlier versions.
      */
     @available(iOS 16.1, *)
-    public static func setup<Attributes: PushwooshLiveActivityAttributes>(_ activityType: Attributes.Type) {
+    static func setup<Attributes: PushwooshLiveActivityAttributes>(_ activityType: Attributes.Type) {
         PushwooshLiveActivitiesImplementationSetup.configureLiveActivity(activityType)
     }
     
@@ -39,13 +67,9 @@ public class PushwooshLiveActivities: NSObject {
      1. There is only one Live Activity widget in the app.
      2. A cross-platform framework is used, and the developer wants to avoid creating bindings between the framework and iOS native
         ActivityKit.
-
-     - Parameters:
-       - options: An optional parameter for providing more detailed configuration options.
      */
     @available(iOS 16.1, *)
-    @objc
-    public static func defaultSetup() {
+    static func defaultSetup() {
         PushwooshLiveActivitiesImplementationSetup.defaultSetup()
     }
     
@@ -59,9 +83,7 @@ public class PushwooshLiveActivities: NSObject {
        - content: A dictionary containing the initial content state to initialize `DefaultLiveActivityAttributes`.
      */
     @available(iOS 16.1, *)
-    @objc
-    public static func defaultStart(_ activityId: String, attributes: [String: Any], content: [String: Any]) {
+    static func defaultStart(_ activityId: String, attributes: [String: Any], content: [String: Any]) {
         PushwooshLiveActivitiesImplementationSetup.defaultStart(activityId, attributes: attributes, content: content)
     }
 }
-#endif

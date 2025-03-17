@@ -20,7 +20,26 @@
 #import "PWRequestsCacheManager.h"
 #endif
 
+#if defined(__cplusplus)
+#define let auto const
+#else
+#define let const __auto_type
+#endif
+
 @implementation Pushwoosh
+
++ (Class<PWLiveActivities>)LiveActivities {
+    let pushwooshLiveActivities = NSClassFromString(@"PushwooshLiveActivitiesImplementationSetup");
+    if (pushwooshLiveActivities != nil) {
+        return [pushwooshLiveActivities performSelector:@selector(liveActivities)];
+    } else {
+        return [PWStubLiveActivities liveActivities];
+    }
+}
+
++ (Class<PWDebug>)Debug {
+    return [PushwooshLog Debug];
+}
 
 static Pushwoosh *pushwooshInstance = nil;
 static dispatch_once_t pushwooshOncePredicate;
@@ -86,7 +105,7 @@ static dispatch_once_t pushwooshOncePredicate;
 #endif
         
 #if TARGET_OS_IOS || TARGET_OS_WATCH
-        PWLogDebug(@"Will show foreground notifications: %d", self.showPushnotificationAlert);
+        [PushwooshLog pushwooshLog:PW_LL_DEBUG className:self message:[NSString stringWithFormat:@"Will show foreground notifications: %d", self.showPushnotificationAlert]];
 #endif
         
         self.inAppManager = [PWInAppManager sharedManager];
@@ -128,7 +147,7 @@ static dispatch_once_t pushwooshOncePredicate;
         if (completion) {
             completion(nil, [PWUtils pushwooshErrorWithCode:PWErrorCommunicationDisabled description:error]);
         } else {
-            PWLogError(error);
+            [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:[NSString stringWithFormat:@"%@", error]];
         }
         return;
     }
@@ -177,7 +196,7 @@ static dispatch_once_t pushwooshOncePredicate;
         if (completion) {
             completion([PWUtils pushwooshErrorWithCode:PWErrorCommunicationDisabled description:error]);
         } else {
-            PWLogError(error);
+            [PushwooshLog pushwooshLog:PW_LL_ERROR className:self message:[NSString stringWithFormat:@"%@", error]];
         }
         return;
     }
@@ -246,7 +265,7 @@ static dispatch_once_t pushwooshOncePredicate;
 
 - (void)setLanguage:(NSString *)language {
     [PWPreferences preferences].language = language;
-    PWLogInfo(@"Language has been set to: %@", language);
+    [PushwooshLog pushwooshLog:PW_LL_INFO className:self message:[NSString stringWithFormat:@"Language has been set to: %@", language]];
 }
 
 - (NSString *)language {
