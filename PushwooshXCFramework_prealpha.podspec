@@ -51,4 +51,10 @@ Pod::Spec.new do |s|
     geozones.frameworks  = 'CoreLocation'
     geozones.dependency 'PushwooshXCFramework_prealpha/Core'
   end
+
+  # PushwooshVoIP Subspec (optional)
+  s.subspec 'PushwooshVoIP' do |voip|
+    voip.dependency 'PushwooshXCFramework_prealpha/PushwooshCore'
+    voip.vendored_frameworks = 'XCFramework/PushwooshVoIP.xcframework'
+  end
 end

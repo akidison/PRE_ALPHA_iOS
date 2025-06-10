@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "PushwooshLiveActivities",
+    "printedName": "PushwooshLiveActivities",
     "children": [
       {
         "kind": "Import",
@@ -206,6 +206,20 @@
           "Available"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
           {
             "kind": "Conformance",
             "name": "ActivityAttributes",
@@ -436,6 +450,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -587,6 +615,20 @@
           "Available"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
           {
             "kind": "Conformance",
             "name": "Hashable",
@@ -780,6 +822,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -830,10 +886,7 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
-        "moduleName": "PushwooshLiveActivities",
-        "declAttributes": [
-          "RawDocComment"
-        ]
+        "moduleName": "PushwooshLiveActivities"
       },
       {
         "kind": "Import",
@@ -1466,6 +1519,20 @@
             "conformances": [
               {
                 "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "PushwooshLiveActivityContentState",
                 "printedName": "PushwooshLiveActivityContentState",
                 "usr": "s:23PushwooshLiveActivities0aB20ActivityContentStateP",
@@ -1562,6 +1629,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "PushwooshLiveActivityAttributes",
@@ -2016,6 +2097,45 @@
           },
           {
             "kind": "Function",
+            "name": "configureLiveActivity",
+            "printedName": "configureLiveActivity(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Metatype",
+                "printedName": "τ_0_0.Type",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23PushwooshLiveActivities0abC19ImplementationSetupC09configureB8ActivityyyxmAA0abG10AttributesRzlFZ",
+            "mangledName": "$s23PushwooshLiveActivities0abC19ImplementationSetupC09configureB8ActivityyyxmAA0abG10AttributesRzlFZ",
+            "moduleName": "PushwooshLiveActivities",
+            "genericSig": "<τ_0_0 where τ_0_0 : PushwooshLiveActivities.PushwooshLiveActivityAttributes>",
+            "sugared_genericSig": "<Attributes where Attributes : PushwooshLiveActivities.PushwooshLiveActivityAttributes>",
+            "static": true,
+            "intro_iOS": "16.1",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Available",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "defaultSetup",
             "printedName": "defaultSetup()",
             "children": [
@@ -2026,7 +2146,7 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:23PushwooshLiveActivities0abC19ImplementationSetupC07defaultE0yyFZ",
+            "usr": "c:@M@PushwooshLiveActivities@objc(cs)PushwooshLiveActivitiesImplementationSetup(cm)defaultSetup",
             "mangledName": "$s23PushwooshLiveActivities0abC19ImplementationSetupC07defaultE0yyFZ",
             "moduleName": "PushwooshLiveActivities",
             "static": true,
@@ -2034,7 +2154,8 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "Available"
+              "Available",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -2199,6 +2320,20 @@
             "printedName": "PWLiveActivities",
             "usr": "c:@M@PushwooshBridge@objc(pl)PWLiveActivities",
             "mangledName": "$s15PushwooshBridge16PWLiveActivitiesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -3042,6 +3177,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -3376,11 +3525,12 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15PushwooshBridge16PWLiveActivitiesP0a4LiveD0E015sendPushToStartE8Activity5token10completionySS_ys5Error_pSgctF",
-            "mangledName": "$s15PushwooshBridge16PWLiveActivitiesP0a4LiveD0E015sendPushToStartE8Activity5token10completionySS_ys5Error_pSgctF",
+            "usr": "s:15PushwooshBridge16PWLiveActivitiesP0a4LiveD0E015sendPushToStartE8Activity5token10completionySS_ys5Error_pSgctFZ",
+            "mangledName": "$s15PushwooshBridge16PWLiveActivitiesP0a4LiveD0E015sendPushToStartE8Activity5token10completionySS_ys5Error_pSgctFZ",
             "moduleName": "PushwooshLiveActivities",
             "genericSig": "<τ_0_0 where τ_0_0 : PushwooshBridge.PWLiveActivities>",
             "sugared_genericSig": "<Self where Self : PushwooshBridge.PWLiveActivities>",
+            "static": true,
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
@@ -3768,32 +3918,26 @@
         "declAttributes": [
           "ObjC"
         ],
-        "isExternal": true
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
   },
-  "ConstValues": [
-    {
-      "filePath": "\/Users\/akidis\/Documents\/iOS\/Pushwoosh\/PushwooshLiveActivities\/API\/Requests\/PWRequestSetActivityToken.swift",
-      "kind": "StringLiteral",
-      "offset": 213,
-      "length": 25,
-      "value": "\"PushwooshLiveActivities.PWRequestSetActivityToken\""
-    },
-    {
-      "filePath": "\/Users\/akidis\/Documents\/iOS\/Pushwoosh\/PushwooshLiveActivities\/API\/Requests\/PWRequestSetPushToStartToken.swift",
-      "kind": "StringLiteral",
-      "offset": 216,
-      "length": 28,
-      "value": "\"PushwooshLiveActivities.PWRequestSetPushToStartToken\""
-    },
-    {
-      "filePath": "\/Users\/akidis\/Documents\/iOS\/Pushwoosh\/PushwooshLiveActivities\/API\/Requests\/PWRequestStopLiveActivity.swift",
-      "kind": "StringLiteral",
-      "offset": 213,
-      "length": 25,
-      "value": "\"PushwooshLiveActivities.PWRequestStopLiveActivity\""
-    }
-  ]
+  "ConstValues": []
 }

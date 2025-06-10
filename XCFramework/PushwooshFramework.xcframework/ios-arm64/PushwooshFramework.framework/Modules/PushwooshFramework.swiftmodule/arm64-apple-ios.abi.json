@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "PushwooshFramework",
+    "printedName": "PushwooshFramework",
     "children": [
       {
         "kind": "Import",
@@ -154,6 +154,67 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "VoIP",
+            "printedName": "VoIP",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ExistentialMetatype",
+                "printedName": "any PushwooshBridge.PWVoIP.Type",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PWVoIP",
+                    "printedName": "PushwooshBridge.PWVoIP",
+                    "usr": "c:@M@PushwooshBridge@objc(pl)PWVoIP"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So9PushwooshC0A9FrameworkE4VoIP0A6Bridge04PWVoD0_pXpvpZ",
+            "mangledName": "$sSo9PushwooshC0A9FrameworkE4VoIP0A6Bridge04PWVoD0_pXpvpZ",
+            "moduleName": "PushwooshFramework",
+            "static": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ExistentialMetatype",
+                    "printedName": "any PushwooshBridge.PWVoIP.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PWVoIP",
+                        "printedName": "PushwooshBridge.PWVoIP",
+                        "usr": "c:@M@PushwooshBridge@objc(pl)PWVoIP"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So9PushwooshC0A9FrameworkE4VoIP0A6Bridge04PWVoD0_pXpvgZ",
+                "mangledName": "$sSo9PushwooshC0A9FrameworkE4VoIP0A6Bridge04PWVoD0_pXpvgZ",
+                "moduleName": "PushwooshFramework",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
           }
         ],
         "declKind": "Class",
@@ -172,6 +233,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",

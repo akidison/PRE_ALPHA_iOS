@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/PWCConfig.h</key>
 		<data>
-		NFd9tja2R4Ona2OaVgqkEXO4YZQ=
+		+6bCT2bb0YB9tDIGnByOFU5Fzrk=
 		</data>
 		<key>Headers/PWCConstants.h</key>
 		<data>
@@ -16,6 +16,10 @@
 		<data>
 		T+r+iL0MeuXH+rAdhwi9namyBgU=
 		</data>
+		<key>Headers/PWCoreGDPRManager.h</key>
+		<data>
+		oz1O9b89jLw/q4/QrjnO++LPJfs=
+		</data>
 		<key>Headers/PWCoreRequest.h</key>
 		<data>
 		xdsFYuZeLG8AQTmmzeXXnn4VI/w=
@@ -24,13 +28,21 @@
 		<data>
 		TcqPvXabcrlAzi/00b/TXK4BvKM=
 		</data>
+		<key>Headers/PWCoreServerCommunicationManager.h</key>
+		<data>
+		BY+3F1sCOJEujCfE0ykbMiGSDAs=
+		</data>
+		<key>Headers/PWCoreUtils.h</key>
+		<data>
+		I3f/cdVyFXUbzS+FU+LXDYQM4VM=
+		</data>
 		<key>Headers/PWSettings.h</key>
 		<data>
-		4a2nvl1UlOSHuGnxH/TkjBUwmJ4=
+		yH0Nu64bgq9Z2EzLOXhcFnAlix4=
 		</data>
 		<key>Headers/PushwooshCore.h</key>
 		<data>
-		qrRACRxTaCdz5Emwa+gKPnX8+pE=
+		HaEfqnlxbyzxSDeL+NvjIBrNKdw=
 		</data>
 		<key>Headers/PushwooshLog.h</key>
 		<data>
@@ -38,11 +50,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DXS8mvX0cGXZufao75DhaE5/myw=
+		67fLWOUnSMWnk5k5+IMEWqsN8rY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		tWNyxafrwzLZawUeGfsMh0/3LSU=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		7NzAl/qfKZwy0neaQU691RMQzrw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -51,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RG8FAmclKvUnHOCkNrLmwVsanA+X0ZRyJyCFoDpaaH8=
+			8c9+1qIVa377uIDsDuQ6HNdH2IPs7twvsVp1wtLEppc=
 			</data>
 		</dict>
 		<key>Headers/PWCConstants.h</key>
@@ -68,6 +84,13 @@
 			bxJt3iJEj9FqmL4A3kuG5fvWDQ3ZruDzy3FY+jvmnoo=
 			</data>
 		</dict>
+		<key>Headers/PWCoreGDPRManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DDG36zdTUetSWf0NAsjokvJewyAGUeGNlkb0VutTszk=
+			</data>
+		</dict>
 		<key>Headers/PWCoreRequest.h</key>
 		<dict>
 			<key>hash2</key>
@@ -82,18 +105,32 @@
 			dX7cvfxDGQphsCqfJ0+1C5RCCgmsedqKDHyqK5AfoRA=
 			</data>
 		</dict>
+		<key>Headers/PWCoreServerCommunicationManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			y4W4KjQgFKVATO6LI+AKMrDR32NX0QOo+d50gukY5Y8=
+			</data>
+		</dict>
+		<key>Headers/PWCoreUtils.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			u0BkCmHcOKYs05M/FmQQfPshZ0WiT70ld3jqjLjSOZI=
+			</data>
+		</dict>
 		<key>Headers/PWSettings.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jpz/qm1/DVrIS/hFpgTO5tcljlzwSD/uRRI5UqEycyI=
+			t+i85lKyFt3Rd/JxjIYsHsTL8O3NhhKDHtUpGwMI9T0=
 			</data>
 		</dict>
 		<key>Headers/PushwooshCore.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v9SjzhVyKePrVbrwwvLGLgFKwzLsg335qbv3651+bPE=
+			8bOvp22B1S3GCCGPYd+zyYjWvBbhv37S6CnaC7jWwkE=
 			</data>
 		</dict>
 		<key>Headers/PushwooshLog.h</key>
@@ -108,6 +145,13 @@
 			<key>hash2</key>
 			<data>
 			+tG86QNevlzs0ASV1BDh2g/cKAKYNCcjr0UVe/ge3zo=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5JV1VLSsu0iGctH5UBK5JwFbMxxCcRJL5PJrqjkX+ZM=
 			</data>
 		</dict>
 	</dict>

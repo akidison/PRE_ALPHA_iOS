@@ -13,8 +13,11 @@
 #import <PushwooshCore/PushwooshLog.h>
 #import <PushwooshCore/PWCoreRequest.h>
 #import <PushwooshCore/PWCoreRequestManager.h>
+#import <PushwooshCore/PWCoreGDPRManager.h>
+#import <PushwooshCore/PWCoreServerCommunicationManager.h>
+#import <PushwooshCore/PWCoreUtils.h>
 
-#define PUSHWOOSH_VERSION @"6.7.15"
+#define PUSHWOOSH_VERSION @"6.8.3"
 
 @interface PushwooshCoreManager : NSObject
 

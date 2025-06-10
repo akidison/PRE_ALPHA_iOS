@@ -42,27 +42,27 @@
 		<key>Pushwoosh.mac.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Pushwoosh.watchOS.dynamic.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>10</integer>
 		</dict>
 		<key>Pushwoosh.watchOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>9</integer>
 		</dict>
 		<key>PushwooshBridge.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>11</integer>
 		</dict>
 		<key>PushwooshCore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>4</integer>
 		</dict>
 		<key>PushwooshCoreModule.xcscheme_^#shared#^_</key>
 		<dict>
@@ -72,7 +72,7 @@
 		<key>PushwooshFramework.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>6</integer>
 		</dict>
 		<key>PushwooshFrameworkCustomBuild.xcscheme_^#shared#^_</key>
 		<dict>
@@ -82,17 +82,17 @@
 		<key>PushwooshFrameworkMac.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>12</integer>
 		</dict>
 		<key>PushwooshFrameworkVision.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>13</integer>
 		</dict>
 		<key>PushwooshLiveActivities.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>7</integer>
 		</dict>
 		<key>PushwooshLiveActivity.xcscheme_^#shared#^_</key>
 		<dict>
@@ -127,7 +127,7 @@
 		<key>PushwooshVisionOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>8</integer>
 		</dict>
 		<key>PushwooshiOS 1.xcscheme_^#shared#^_</key>
 		<dict>
